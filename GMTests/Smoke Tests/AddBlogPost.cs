@@ -11,7 +11,8 @@ namespace GMTests
         [TestMethod]
         public void AddBlogPostOpensNewForm()
         {
-
+            LoginPage.GoTo();
+            LoginPage.LoginAs("gregmawsonblog", "automation123!");
             TopBarPage.ClickMySite();
         }
 

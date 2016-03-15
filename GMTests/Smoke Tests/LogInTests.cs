@@ -10,6 +10,8 @@ namespace GMTests
         [TestMethod]
         public void UserCanLogin()
         {
+            LoginPage.GoTo();
+            LoginPage.LoginAs("gregmawsonblog", "automation123!");
             Assert.IsTrue(ReaderPage.IsAt());
         }
         

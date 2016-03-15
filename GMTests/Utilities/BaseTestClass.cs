@@ -10,8 +10,7 @@ namespace GMTests
         public void Init()
         {
             Driver.Initialise();
-            LoginPage.GoTo();
-            LoginPage.LoginAs("gregmawsonblog", "automation123!");
+
         }
 
         [TestCleanup]
