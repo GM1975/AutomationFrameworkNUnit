@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using System.Configuration;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Remote;
 
 
 namespace GMAutomation
@@ -40,7 +41,8 @@ namespace GMAutomation
 
             }
 
-
+            Instance = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), DesiredCapabilities.Chrome());
+            //Instance = new RemoteWebDriver(new Uri("http://192.168.183.101:8080/wd/hub"), DesiredCapabilities.Firefox());
             Instance.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
             Instance.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(15));
             Instance.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(15));
